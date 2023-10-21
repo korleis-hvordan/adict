@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-input[type="checkbox"] {
-  margin-inline: 0.5rem;
-}
-
 .ipa {
   font-family: 'Noto Sans', sans-serif;
   font-size: 1.2rem;
