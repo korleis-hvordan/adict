@@ -61,19 +61,18 @@ function App() {
           setResults(["no results"]);
           return;
         }
-
+        
         thop.forEach((e, i) => {
           [...e].forEach((c, index) => {
             if (c === "ʰ") {
-              none[i] = none[i].substring(0, index + 1) + "ʰ" + thinSpace
-                + none[i].substring(index + 1);
+              none[i] = none[i].substring(0, index) + "ʰ" + thinSpace
+              + none[i].substring(index + 1);
             }
           });
         });
-
+        
         const wordList = getWords(html1);
         none = none.filter((e, i) => wordList[i] === field.trim().toLowerCase());
-
         none = none.map(e => {
           return e.split(thinSpace).map(ele => {
             if (ele.length > 1) {

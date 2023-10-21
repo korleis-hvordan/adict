@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 .ipa {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+
+  font-size: 1.4rem;
   color: #285599;
 }
