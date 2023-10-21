@@ -76,7 +76,7 @@ function App() {
         none = none.map(e => {
           return e.split(thinSpace).map(ele => {
             if (ele.length > 1) {
-              if (ele.length == 2 && ele[1] !== accent && ele[1] !== "ː") {
+              if (ele.length == 2 && ele[1] !== accent && ele[1] !== "ː" && ele[1] !== "ʰ") {
                 return ele[0] + tie + thinSpace + ele[1];
               }
               else if (ele.length == 3 && ele[2] !== "ː") {
