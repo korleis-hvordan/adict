@@ -1,0 +1,5 @@
+@import url('libraries/modern-normalize.css');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
