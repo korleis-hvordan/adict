@@ -44,7 +44,7 @@ function App() {
       <form onSubmit={async e => {
         e.preventDefault();
 
-        setResults([]);
+        setResults(["searching"]);
 
         const [res1, res2] = await Promise.all([
           fetch(`http://seas.elte.hu/cube/index.pl?s=${escape(field)}&fullw=on&invr=on&goal=on`),
