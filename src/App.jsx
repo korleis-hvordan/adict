@@ -31,8 +31,7 @@ function App() {
     const htmlElem = document.createElement("html");
     htmlElem.innerHTML = html
       .replaceAll("&#x02A7", "t&#800;&#643").replaceAll("&#x02A4", "d&#800;&#658")
-      .replaceAll("&#x0279", "&#x0279;&#800;&#x02B7")
-    console.log(html)
+      .replaceAll("&#x0279", "&#x0279;&#800;&#x02B7").replaceAll("h&#8201;j", "&#231;")
     return [...htmlElem.querySelectorAll(".ipa")].map(e => e.innerText);
   }
 
