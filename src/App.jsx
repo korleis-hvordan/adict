@@ -43,8 +43,8 @@ function App() {
   useDidUpdate(() => {
     (async () => {
       const [res1, res2] = await Promise.all([
-        fetch(`http://seas.elte.hu/cube/index.pl?s=${escape(lastWord)}&fullw=on&invr=on&goal=on`),
-        fetch(`http://seas.elte.hu/cube/index.pl?s=${escape(lastWord)}&fullw=on&invr=on&goal=on&thop=on`)
+        fetch(`https://cors-anywhere.herokuapp.com/http://seas.elte.hu/cube/index.pl?s=${escape(lastWord)}&fullw=on&invr=on&goal=on`),
+        fetch(`https://cors-anywhere.herokuapp.com/http://seas.elte.hu/cube/index.pl?s=${escape(lastWord)}&fullw=on&invr=on&goal=on&thop=on`)
       ]);
   
       const [html1, html2] = await Promise.all([
