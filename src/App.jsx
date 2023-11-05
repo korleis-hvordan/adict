@@ -29,7 +29,7 @@ function App() {
 
   function getIPAs(html) {
     const htmlElem = document.createElement("html");
-    htmlElem.innerHTML = html;
+    htmlElem.innerHTML = html.replaceAll("&#x02A7", "t&#800;&#643").replaceAll("&#x02A4", "d&#800;&#658");
     return [...htmlElem.querySelectorAll(".ipa")].map(e => e.innerText);
   }
 
