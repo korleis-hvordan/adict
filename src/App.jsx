@@ -30,8 +30,9 @@ function App() {
   function getIPAs(html) {
     const htmlElem = document.createElement("html");
     htmlElem.innerHTML = html
-      .replaceAll("&#x02A7", "t&#800;&#643").replaceAll("&#x02A4", "d&#800;&#658")
-      .replaceAll("&#x0279", "&#x0279;&#800;&#x02B7").replaceAll("h&#8201;j", "&#231;")
+      .replaceAll("&#x0283", "&#x0283;&#x02B7").replaceAll("&#x0292", "&#x0292;&#x02B7")
+      .replaceAll("&#x02A7", "t&#800;&#643;&#x02B7").replaceAll("&#x02A4", "d&#800;&#658;&#x02B7")
+      .replaceAll("&#x0279", "&#x0279;&#800;&#x02B7").replaceAll("h&#8201;j", "&#231;");
     return [...htmlElem.querySelectorAll(".ipa")].map(e => e.innerText);
   }
 
@@ -74,11 +75,12 @@ function App() {
       none = none.map(e => {
         return e.split(thinSpace).map(ele => {
           if (ele.length > 1) {
-            if (ele.length == 2 && ele[1] !== accent && ele[1] !== "ː" && ele[1] !== "ʰ") {
+            if (ele.length == 2 && ele[1] !== accent && ele[1] !== "ː" && ele[1] !== "ʰ" &&
+              ele[1] !== "ʷ") {
               return ele[0] + tie + thinSpace + ele[1];
             }
-            else if (ele.length == 3 && ele[2] !== "ː" && ele[2] !== "ʷ") {
-              return ele.substring(0, 2) + tie + thinSpace + ele[2];
+            else if (ele.length > 2 && ele[2] !== "ː" && ele[2] !== "ʷ") {
+              return ele.substring(0, 2) + tie + thinSpace + ele.substring(2);
             }
           }
           return ele;
