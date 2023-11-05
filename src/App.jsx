@@ -29,7 +29,10 @@ function App() {
 
   function getIPAs(html) {
     const htmlElem = document.createElement("html");
-    htmlElem.innerHTML = html.replaceAll("&#x02A7", "t&#800;&#643").replaceAll("&#x02A4", "d&#800;&#658");
+    htmlElem.innerHTML = html
+      .replaceAll("&#x02A7", "t&#800;&#643").replaceAll("&#x02A4", "d&#800;&#658")
+      .replaceAll("&#x0279", "&#x0279;&#800;&#x02B7")
+    console.log(html)
     return [...htmlElem.querySelectorAll(".ipa")].map(e => e.innerText);
   }
 
@@ -75,7 +78,7 @@ function App() {
             if (ele.length == 2 && ele[1] !== accent && ele[1] !== "ː" && ele[1] !== "ʰ") {
               return ele[0] + tie + thinSpace + ele[1];
             }
-            else if (ele.length == 3 && ele[2] !== "ː") {
+            else if (ele.length == 3 && ele[2] !== "ː" && ele[2] !== "ʷ") {
               return ele.substring(0, 2) + tie + thinSpace + ele[2];
             }
           }
