@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useDidUpdate } from "@mantine/hooks";
 
 import "./App.css";
 
@@ -39,7 +40,7 @@ function App() {
     .map(e => e.innerText.substring(0, e.innerText.length - 2).toLowerCase());
   }
 
-  useEffect(() => {
+  useDidUpdate(() => {
     (async () => {
       const [res1, res2] = await Promise.all([
         fetch(`http://seas.elte.hu/cube/index.pl?s=${escape(lastWord)}&fullw=on&invr=on&goal=on`),
@@ -51,7 +52,7 @@ function App() {
       ]);
 
       let [none, thop] = [getIPAs(html1), getIPAs(html2)];
-  
+      
       if (none.length === 0) {
         setResults(["no results"]);
         return () => {};
